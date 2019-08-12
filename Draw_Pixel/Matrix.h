@@ -8,12 +8,13 @@
 
 class Matrix
 {
-private:
+protected:
 	std::vector< std::vector<float> > mat;
 	unsigned rows;
 	unsigned cols;
 
 public:
+	Matrix();
 	Matrix(unsigned rows, unsigned cols);
 	Matrix(Matrix& rhs);
 	Matrix(const Matrix& other); //Constructor de copia

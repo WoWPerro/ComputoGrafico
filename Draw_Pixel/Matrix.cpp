@@ -2,6 +2,17 @@
 #include "Matrix.h"
 #include <iostream>
 
+Matrix::Matrix()
+{
+	this->rows = 3;
+	this->cols = 3;
+	mat.resize(rows);
+	for (int i = 0; i < mat.size(); i++)
+	{
+		mat[i].resize(cols, 0);
+	}
+}
+
 Matrix::Matrix(unsigned rows, unsigned cols)
 {
 	this->rows = rows;
@@ -215,14 +226,17 @@ Vector2 Matrix::operator*(Vector2& v1)
 
 void Matrix::Print()
 {
+	std::cout << "_____________________________________" << std::endl;
 	for (int i = 0; i < rows; i++)
 	{
 		for (int j = 0; j < cols; j++)
 		{
-			std::cout << mat[i][j];
+			std::cout << mat[i][j] << "\t";
 		}
 		std::cout << std::endl;
 	}
+	std::cout << "_____________________________________" << std::endl;
+	std::cout << std::endl;
 }
 
 Matrix::~Matrix()

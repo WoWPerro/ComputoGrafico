@@ -11,6 +11,9 @@
 #include "Vector2.h"
 #include "Matrix.h"
 #include "Text.h"
+#include "MatrizEscalamiento.h"
+#include "MatrizRotacion.h"
+#include "MatrizTranslacion.h"
 
 //Screen dimension constants
 int SCREEN_WIDTH = 1280;  //Hacer variables y modificar con respecto a la entrada de los parámetros para pasarlo desde consola
@@ -254,8 +257,7 @@ int main(int argc, char* args[])
 				}
 			}
 
-			Text text(gRenderer, "C:\\Users\\Carlo\\source\\repos\\5_Trimestre\\ComputoGráfico\\Draw_Pixel\\Draw_Pixel\\res\\arial.ttf", 30, "Hello World", { 255, 0, 0, 255 });
-			text.Display(20, 20, gRenderer);
+			
 
 			//PRUEBAS
 			//DRAW
@@ -296,7 +298,15 @@ int main(int argc, char* args[])
 			0 1 0
 			0 0 0*/
 
-			
+			Text text(gRenderer, "arial.ttf", 30, "Hello World", { 255, 0, 0, 255 });
+			text.Display(20, 20, gRenderer);
+
+			MatrizEscalamiento MS(1.5, 2);
+			MS.Print();
+			MatrizRotacion MR(90);
+			MR.Print();
+			MatrizTranslacion MT(1.5, 1.5);
+			MT.Print();
 		}
 
 	}

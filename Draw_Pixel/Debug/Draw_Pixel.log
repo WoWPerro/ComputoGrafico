@@ -1,11 +1,23 @@
-﻿  Draw_Pixel.cpp
-c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\matrix.h(42): warning C4521: 'Matrix': multiple copy constructors specified
-c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(189): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(190): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(203): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(204): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(219): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(220): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-  Text.cpp
-  Generating Code...
+﻿  MatrizRotacion.cpp
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\matrix.h(43): warning C4521: 'Matrix': multiple copy constructors specified
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\matrizrotacion.cpp(7): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\matrizrotacion.cpp(8): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\matrizrotacion.cpp(9): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\matrizrotacion.cpp(10): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
+          with
+          [
+              _Ty=float
+          ]
   Draw_Pixel.vcxproj -> C:\Users\Carlo\source\repos\5_Trimestre\ComputoGráfico\Draw_Pixel\Debug\Draw_Pixel.exe
