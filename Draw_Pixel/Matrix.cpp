@@ -204,12 +204,12 @@ Matrix& Matrix::operator=(Matrix other)
 	return *this;
 }
 
-Vector2 Matrix::operator*(const Vector2& v1)
+Vector2 Matrix::operator*(Vector2& v1)
 {
-	Vector2 v2(0, 0);
-	/*v2.SetVector2XM(v1.GetVector2X*mat[0][0] + v1.GetVector2Y*mat[0][1] + v1.GetVector2Z*mat[0][2]);
-	v2.SetVector2YM(v1.GetVector2X*mat[1][0] + v1.GetVector2Y*mat[1][1] + v1.GetVector2Z*mat[1][2]);
-	v2.SetVector2ZM(v1.GetVector2X*mat[2][0] + v1.GetVector2Y*mat[2][1] + v1.GetVector2Z*mat[2][2]);*/
+	Vector2 v2(0, 0);	
+	v2.SetVector2XM((v1.GetVector2X()*mat[0][0]) + (v1.GetVector2Y()*mat[0][1]) + (v1.GetVector2Z()*mat[0][2]));
+	v2.SetVector2YM((v1.GetVector2X()*mat[1][0]) + (v1.GetVector2Y()*mat[1][1]) + (v1.GetVector2Z()*mat[1][2]));
+	v2.SetVector2ZM((v1.GetVector2X()*mat[2][0]) + (v1.GetVector2Y()*mat[2][1]) + (v1.GetVector2Z()*mat[2][2]));
 	return v2;
 }
 

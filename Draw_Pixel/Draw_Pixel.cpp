@@ -10,6 +10,7 @@
 #include <cmath>
 #include "Vector2.h"
 #include "Matrix.h"
+#include "Text.h"
 
 //Screen dimension constants
 int SCREEN_WIDTH = 1280;  //Hacer variables y modificar con respecto a la entrada de los parámetros para pasarlo desde consola
@@ -193,9 +194,23 @@ void DrawVector(Vector2 *v1)
 	SDL_RenderPresent(gRenderer);
 }
 
+void DrawVector(Vector2 v1)
+{
+	SDL_Rect point;
+
+	point.w = 10;
+	point.h = 10;
+	point.x = ((50 * v1.GetVector2X() - (point.w / 2)) + SCREEN_WIDTH / 2);
+	point.y = (-(50 * v1.GetVector2Y() + (point.h / 2)) + SCREEN_HEIGHT / 2);
+
+	SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0x00, 0xFF);
+	SDL_RenderFillRect(gRenderer, &point);
+	SDL_RenderPresent(gRenderer);
+}
+
 void DrawMatrix(Matrix m1)
 {
-	if ((m1.getCols() != 2 || m1.getRows() != 1))
+	if ((m1.getCols() == 2 && m1.getRows() == 1))
 	{
 		SDL_Rect point;
 
@@ -239,40 +254,38 @@ int main(int argc, char* args[])
 				}
 			}
 
+			Text text(gRenderer, "C:\\Users\\Carlo\\source\\repos\\5_Trimestre\\ComputoGráfico\\Draw_Pixel\\Draw_Pixel\\res\\arial.ttf", 30, "Hello World", { 255, 0, 0, 255 });
+			text.Display(20, 20, gRenderer);
+
 			//PRUEBAS
 			//DRAW
 			DrawPlano();
 			Vector2 *V1 = new Vector2(2, 1);
 			DrawVector(V1);
 
-			Matrix M3(1, 2);
-			M3(0, 0) = 1;
-			M3(0, 1) = 1;
-			M3.Print();
+			Vector2 V2(2, 1);
 
-			DrawMatrix(M3);
+			Matrix Transform(3, 3);
+			Transform(0, 0) = 2;
+			Transform(1, 1) = 2;
 
+			DrawVector(Transform * *V1);
+
+			Matrix M2(1, 2);
+			M2(0, 0) = 1;
+			M2(0, 1) = 1;
+
+			//DrawMatrix(M2);
 
 			Matrix M1(2, 2);
 			M1(0, 0) = 4; 
 			M1(1, 1) = 1;
-			M1.Print();
+			//M1.Print();
 
 			Matrix M5(0, 0);
-			M5 = (M1 * M3);
-			M5.Print();
-
-			Matrix M2(2, 2);
-			M2(0, 0) = 7;
-			M2(1, 1) = 3;
-			/*7 0 0
-			0 3 0*/
-
-			/*28 3 0
-			0 0 0*/
-
-			
-			
+			M5 = (M1 * M2);
+			//DrawMatrix(M5);
+			//M5.Print();
 
 			M1.transpose();
 
@@ -282,6 +295,8 @@ int main(int argc, char* args[])
 			4 1 0
 			0 1 0
 			0 0 0*/
+
+			
 		}
 
 	}

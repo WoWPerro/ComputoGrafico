@@ -32,7 +32,7 @@ public:
 	Matrix operator/(float& rhs);
 
 	//Mult por vector
-	Vector2 operator*(const Vector2& v1);
+	Vector2 operator*(Vector2& v1);
 	float& operator() (const unsigned& i, const unsigned& j);
 
 	unsigned getRows() const;
