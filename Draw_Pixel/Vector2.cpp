@@ -56,7 +56,7 @@ void Vector2::SetVector2ZM(float z)
 	this->z = z;
 }
 
-void Vector2::SetVector2M(int x, int y)
+void Vector2::SetVector2M(float x, float y)
 {
 	this->x = x;
 	this->y = y;

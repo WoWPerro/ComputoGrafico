@@ -1,23 +1,25 @@
-﻿  MatrizRotacion.cpp
+﻿  Draw_Pixel.cpp
 c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\matrix.h(43): warning C4521: 'Matrix': multiple copy constructors specified
-c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\matrizrotacion.cpp(7): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=float
-          ]
-c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\matrizrotacion.cpp(8): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=float
-          ]
-c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\matrizrotacion.cpp(9): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=float
-          ]
-c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\matrizrotacion.cpp(10): warning C4244: '=': conversion from 'double' to '_Ty', possible loss of data
-          with
-          [
-              _Ty=float
-          ]
-  Draw_Pixel.vcxproj -> C:\Users\Carlo\source\repos\5_Trimestre\ComputoGráfico\Draw_Pixel\Debug\Draw_Pixel.exe
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(210): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(211): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(224): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(225): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(232): error C2039: 'list': is not a member of 'std'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector(20): note: see declaration of 'std'
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(232): error C2065: 'list': undeclared identifier
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(232): error C2275: 'Vector2': illegal use of this type as an expression
+  c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\vector2.h(2): note: see declaration of 'Vector2'
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(232): error C2065: 'Vectores': undeclared identifier
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(232): error C2182: 'DrawVectores': illegal use of type 'void'
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(233): error C2448: 'DrawVectores': function-style initializer appears to be a function definition
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(248): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(249): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(282): error C2039: 'list': is not a member of 'std'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\vector(20): note: see declaration of 'std'
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(282): error C2065: 'list': undeclared identifier
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(282): error C2275: 'Vector2': illegal use of this type as an expression
+  c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\vector2.h(2): note: see declaration of 'Vector2'
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(282): error C2065: 'Vectores': undeclared identifier
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(324): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(326): error C2065: 'Vectores': undeclared identifier
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(336): error C2065: 'Vectores': undeclared identifier

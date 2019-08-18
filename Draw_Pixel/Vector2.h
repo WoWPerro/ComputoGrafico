@@ -3,9 +3,9 @@ class Vector2
 {
 private:
 
-	int x;
-	int y;
-	int z = 1;
+	float x;
+	float y;
+	float z = 1;
 	//SDL_Renderer *gRenderer = 0;
 
 public:
@@ -19,7 +19,7 @@ public:
 	void SetVector2XM(float x);
 	void SetVector2YM(float y);
 	void SetVector2ZM(float z);
-	void SetVector2M(int x, int y);
+	void SetVector2M(float x, float y);
 
 	Vector2 operator + (Vector2);
 	Vector2 operator = (Vector2);
@@ -32,9 +32,6 @@ public:
 	float PointProductVector2(Vector2 V2);
 	float NormaVector2();
 	void CrossProductVector2(Vector2 V2);
-
-	//void SetRenderer(SDL_Renderer *gRenderer);
-	//void DrawVector2();
 
 	~Vector2();
 };

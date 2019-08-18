@@ -1,6 +1,7 @@
 // Draw_Pixel.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
+#include <list>
 #include "pch.h"
 #include <iostream>
 #include "SDL.h"
@@ -93,6 +94,23 @@ void close()
 	SDL_Quit();
 }
 
+void DrawText()
+{
+	Text text(gRenderer, "arial.ttf", 25, "Matriz de transformacion", { 255, 0, 0, 255 });
+
+
+	SDL_Rect point;
+	point.w = 300;
+	point.h = 300;
+	point.x = 0;
+	point.y = 0;
+
+	SDL_SetRenderDrawColor(gRenderer, 0x00, 0x00, 0x00, 0xFF);
+	SDL_RenderFillRect(gRenderer, &point);
+
+	text.Display(0, 0, gRenderer);
+}
+
 void DrawPlano()
 {
 	//Clear screen
@@ -180,7 +198,7 @@ void DrawPlano()
 	}
 
 	//Update screen
-	SDL_RenderPresent(gRenderer);
+	//SDL_RenderPresent(gRenderer);
 }
 
 void DrawVector(Vector2 *v1)
@@ -194,7 +212,7 @@ void DrawVector(Vector2 *v1)
 
 	SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0x00, 0xFF);
 	SDL_RenderFillRect(gRenderer, &point);
-	SDL_RenderPresent(gRenderer);
+	//SDL_RenderPresent(gRenderer);
 }
 
 void DrawVector(Vector2 v1)
@@ -208,7 +226,15 @@ void DrawVector(Vector2 v1)
 
 	SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0x00, 0xFF);
 	SDL_RenderFillRect(gRenderer, &point);
-	SDL_RenderPresent(gRenderer);
+	//SDL_RenderPresent(gRenderer);
+}
+
+void DrawVectores(std::list <Vector2> Vectores)	
+{
+	for (std::list<Vector2>::iterator it = Vectores.begin(); it != Vectores.end(); ++it)
+	{
+		DrawVector(*it);
+	}
 }
 
 void DrawMatrix(Matrix m1)
@@ -224,13 +250,37 @@ void DrawMatrix(Matrix m1)
 
 		SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0x00, 0xFF);
 		SDL_RenderFillRect(gRenderer, &point);
-		SDL_RenderPresent(gRenderer);
+		//SDL_RenderPresent(gRenderer);
 	}
 
 }
 
+//void generateVector(int mouseX, int mouseY)
+//{
+//	double x = (((mouseX) - (SCREEN_WIDTH/2.)) / 50.);
+//	double y = -(((mouseY) - (SCREEN_HEIGHT/2.)) / 50.);
+//
+//	Vector2 *V1 = new Vector2(x, y);
+//	DrawVector(V1);
+//	//return *V1;
+//}
+
+//void mousePress(SDL_MouseButtonEvent& b, int mouseX, int mouseY) 
+//{
+//	if (b.button == SDL_BUTTON_LEFT) 
+//	{
+//		/*std::cout << mouseX << "  ";
+//		std::cout << mouseY << std::endl;*/
+//		generateVector(mouseX, mouseY);
+//	}
+//}
+
 int main(int argc, char* args[])
 {
+	int mouseX;
+	int mouseY;
+	std::list <Vector2> Vectores;
+
 	//Start up SDL and create window
 	if (!init())
 	{
@@ -255,6 +305,27 @@ int main(int argc, char* args[])
 				{
 					quit = true;
 				}
+				if (e.type == SDL_MOUSEMOTION)
+				{
+					//Get the mouse offsets
+					mouseX = e.motion.x;
+					mouseY = e.motion.y;
+				}
+				if (e.type == SDL_MOUSEBUTTONDOWN)
+				{
+					SDL_MouseButtonEvent& b = e.button;
+					if (b.button == SDL_BUTTON_LEFT)
+					{
+						/*std::cout << mouseX << "  ";
+						std::cout << mouseY << std::endl;*/
+						double x = (((mouseX)-(SCREEN_WIDTH / 2.)) / 50.);
+						double y = -(((mouseY)-(SCREEN_HEIGHT / 2.)) / 50.);
+
+						Vector2 *V1 = new Vector2(x, y);
+						//DrawVector(V1);
+						Vectores.push_back(*V1);
+					}
+				}
 			}
 
 			
@@ -262,6 +333,7 @@ int main(int argc, char* args[])
 			//PRUEBAS
 			//DRAW
 			DrawPlano();
+			DrawVectores(Vectores);
 			Vector2 *V1 = new Vector2(2, 1);
 			DrawVector(V1);
 
@@ -298,15 +370,16 @@ int main(int argc, char* args[])
 			0 1 0
 			0 0 0*/
 
-			Text text(gRenderer, "arial.ttf", 30, "Hello World", { 255, 0, 0, 255 });
-			text.Display(20, 20, gRenderer);
+			DrawText();
+
+			SDL_RenderPresent(gRenderer);
 
 			MatrizEscalamiento MS(1.5, 2);
-			MS.Print();
+			//MS.Print();
 			MatrizRotacion MR(90);
-			MR.Print();
+			//MR.Print();
 			MatrizTranslacion MT(1.5, 1.5);
-			MT.Print();
+			//MT.Print();
 		}
 
 	}
@@ -316,15 +389,3 @@ int main(int argc, char* args[])
 
 	return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
-
