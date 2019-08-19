@@ -1,8 +1,9 @@
 // Draw_Pixel.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
-#include <list>
+
 #include "pch.h"
+#include <list>
 #include <iostream>
 #include "SDL.h"
 #include <SDL.h>
@@ -94,10 +95,31 @@ void close()
 	SDL_Quit();
 }
 
-void DrawText()
+void DrawText(float SX, float SY, float angle, float TX, float TY, Matrix T2)
 {
 	Text text(gRenderer, "arial.ttf", 25, "Matriz de transformacion", { 255, 0, 0, 255 });
 
+	Text EscalamientoX(gRenderer, "arial.ttf", 12, std::to_string(SX), { 255, 0, 0, 255 });
+	Text EscalamientoY(gRenderer, "arial.ttf", 12, std::to_string(SY), { 255, 0, 0, 255 });
+	Text Angulo    (gRenderer, "arial.ttf", 12, std::to_string(angle), { 255, 0, 0, 255 });
+	Text TranslacionX (gRenderer, "arial.ttf", 12, std::to_string(TX), { 255, 0, 0, 255 });
+	Text TranslacionY (gRenderer, "arial.ttf", 12, std::to_string(TY), { 255, 0, 0, 255 });
+
+	Text EscalamientoXT(gRenderer, "arial.ttf", 12, "SX", { 255, 255, 0, 255 });
+	Text EscalamientoYT(gRenderer, "arial.ttf", 12, "SY", { 255, 255, 0, 255 });
+	Text AnguloT(gRenderer, "arial.ttf", 12, "angle", { 255, 255, 0, 255 });
+	Text TranslacionXT(gRenderer, "arial.ttf", 12, "TX", { 255, 255, 0, 255 });
+	Text TranslacionYT(gRenderer, "arial.ttf", 12, "TY", { 255, 255, 0, 255 });
+
+	Text Matriz00(gRenderer, "arial.ttf", 12, std::to_string(T2(0, 0)), { 255, 0, 0, 255 });
+	Text Matriz01(gRenderer, "arial.ttf", 12, std::to_string(T2(0, 1)), { 255, 0, 0, 255 });
+	Text Matriz02(gRenderer, "arial.ttf", 12, std::to_string(T2(0, 2)), { 255, 0, 0, 255 });
+	Text Matriz10(gRenderer, "arial.ttf", 12, std::to_string(T2(1, 0)), { 255, 0, 0, 255 });
+	Text Matriz11(gRenderer, "arial.ttf", 12, std::to_string(T2(1, 1)), { 255, 0, 0, 255 });
+	Text Matriz12(gRenderer, "arial.ttf", 12, std::to_string(T2(1, 2)), { 255, 0, 0, 255 });
+	Text Matriz20(gRenderer, "arial.ttf", 12, std::to_string(T2(2, 0)), { 255, 0, 0, 255 });
+	Text Matriz21(gRenderer, "arial.ttf", 12, std::to_string(T2(2, 1)), { 255, 0, 0, 255 });
+	Text Matriz22(gRenderer, "arial.ttf", 12, std::to_string(T2(2, 2)), { 255, 0, 0, 255 });
 
 	SDL_Rect point;
 	point.w = 300;
@@ -109,6 +131,27 @@ void DrawText()
 	SDL_RenderFillRect(gRenderer, &point);
 
 	text.Display(0, 0, gRenderer);
+	EscalamientoX.Display(40, 50, gRenderer);
+	EscalamientoY.Display(40, 70, gRenderer);
+	Angulo.Display(120, 90, gRenderer);
+	TranslacionX.Display(190, 50, gRenderer);
+	TranslacionY.Display(190, 70, gRenderer);
+
+	EscalamientoXT.Display(20, 50, gRenderer);
+	EscalamientoYT.Display(20, 70, gRenderer);
+	AnguloT.Display(80, 90, gRenderer);
+	TranslacionXT.Display(170, 50, gRenderer);
+	TranslacionYT.Display(170, 70, gRenderer);
+
+	Matriz00.Display(10, 150, gRenderer);
+	Matriz01.Display(80, 150, gRenderer);
+	Matriz02.Display(150, 150, gRenderer);
+	Matriz10.Display(10, 170, gRenderer);
+	Matriz11.Display(80, 170, gRenderer);
+	Matriz12.Display(150, 170, gRenderer);
+	Matriz20.Display(10, 190, gRenderer);
+	Matriz21.Display(80, 190, gRenderer);
+	Matriz22.Display(150, 190, gRenderer);
 }
 
 void DrawPlano()
@@ -237,6 +280,16 @@ void DrawVectores(std::list <Vector2> Vectores)
 	}
 }
 
+std::list <Vector2> MultiplyVectores(std::list <Vector2> Vectores, Matrix T)
+{
+	std::list <Vector2> Vectores2;
+	for (std::list<Vector2>::iterator it = Vectores.begin(); it != Vectores.end(); ++it)
+	{
+		Vectores2.push_back (T * *it);
+	}
+	return Vectores2;
+}
+
 void DrawMatrix(Matrix m1)
 {
 	if ((m1.getCols() == 2 && m1.getRows() == 1))
@@ -255,31 +308,30 @@ void DrawMatrix(Matrix m1)
 
 }
 
-//void generateVector(int mouseX, int mouseY)
-//{
-//	double x = (((mouseX) - (SCREEN_WIDTH/2.)) / 50.);
-//	double y = -(((mouseY) - (SCREEN_HEIGHT/2.)) / 50.);
-//
-//	Vector2 *V1 = new Vector2(x, y);
-//	DrawVector(V1);
-//	//return *V1;
-//}
-
-//void mousePress(SDL_MouseButtonEvent& b, int mouseX, int mouseY) 
-//{
-//	if (b.button == SDL_BUTTON_LEFT) 
-//	{
-//		/*std::cout << mouseX << "  ";
-//		std::cout << mouseY << std::endl;*/
-//		generateVector(mouseX, mouseY);
-//	}
-//}
+bool Buttonclick(SDL_Rect point, int x, int y)
+{
+	if (x > point.x && x < point.x + point.w)
+	{
+		if (y > point.y && y < point.y + point.h)
+		{
+			return true;
+		}
+	}
+	return false;
+}
 
 int main(int argc, char* args[])
 {
-	int mouseX;
-	int mouseY;
+	int mouseX = 0;
+	int mouseY = 0;
 	std::list <Vector2> Vectores;
+	bool leftclick = false;
+	float SX = 1;
+	float SY = 1;
+	float angle = 1;
+	float TX = 1;
+	float TY = 1;
+	bool Menu = false;
 
 	//Start up SDL and create window
 	if (!init())
@@ -316,70 +368,252 @@ int main(int argc, char* args[])
 					SDL_MouseButtonEvent& b = e.button;
 					if (b.button == SDL_BUTTON_LEFT)
 					{
+						leftclick = true;
 						/*std::cout << mouseX << "  ";
 						std::cout << mouseY << std::endl;*/
 						double x = (((mouseX)-(SCREEN_WIDTH / 2.)) / 50.);
 						double y = -(((mouseY)-(SCREEN_HEIGHT / 2.)) / 50.);
 
-						Vector2 *V1 = new Vector2(x, y);
-						//DrawVector(V1);
-						Vectores.push_back(*V1);
+						if (!Menu)
+						{
+							Vector2 *V1 = new Vector2(x, y);
+							Vectores.push_back(*V1);
+						}
+						
+					}
+				}
+				if (e.type == SDL_MOUSEBUTTONUP)
+				{
+					SDL_MouseButtonEvent& b = e.button;
+					if (b.button == SDL_BUTTON_LEFT)
+					{
+						leftclick = false;
 					}
 				}
 			}
 
-			
+
 
 			//PRUEBAS
 			//DRAW
 			DrawPlano();
-			DrawVectores(Vectores);
-			Vector2 *V1 = new Vector2(2, 1);
-			DrawVector(V1);
 
-			Vector2 V2(2, 1);
-
-			Matrix Transform(3, 3);
-			Transform(0, 0) = 2;
-			Transform(1, 1) = 2;
-
-			DrawVector(Transform * *V1);
-
-			Matrix M2(1, 2);
-			M2(0, 0) = 1;
-			M2(0, 1) = 1;
-
-			//DrawMatrix(M2);
-
-			Matrix M1(2, 2);
-			M1(0, 0) = 4; 
-			M1(1, 1) = 1;
-			//M1.Print();
-
-			Matrix M5(0, 0);
-			M5 = (M1 * M2);
-			//DrawMatrix(M5);
-			//M5.Print();
-
-			M1.transpose();
-
-			
-			/*5 1 1
-			
-			4 1 0
-			0 1 0
-			0 0 0*/
-
-			DrawText();
-
-			SDL_RenderPresent(gRenderer);
-
-			MatrizEscalamiento MS(1.5, 2);
+			MatrizEscalamiento MS(SX, SY);
 			//MS.Print();
-			MatrizRotacion MR(90);
+
+
+			MatrizRotacion MR(angle);
 			//MR.Print();
-			MatrizTranslacion MT(1.5, 1.5);
+
+
+			MatrizTranslacion MT(TX, TY);
 			//MT.Print();
+
+			Matrix T1(3, 3);
+			T1 = (MR * MS);
+			//T1.Print();
+
+			Matrix T2(3, 3);
+			T2 = (T1 * MT);
+			//T2.Print();
+
+
+
+			DrawVectores(Vectores);
+
+			SDL_Rect point1;
+			point1.w = 10;
+			point1.h = 10;
+			point1.x = 5;
+			point1.y = 50;
+			if (Buttonclick(point1, mouseX, mouseY) && leftclick)
+			{
+				SX -= .1f;
+			}
+
+			SDL_Rect point2;
+			point2.w = 10;
+			point2.h = 10;
+			point2.x = 5;
+			point2.y = 70;
+			if (Buttonclick(point2, mouseX, mouseY) && leftclick)
+			{
+				SY -= .1f;
+			}
+
+			SDL_Rect point3;
+			point3.w = 10;
+			point3.h = 10;
+			point3.x = 65;
+			point3.y = 90;
+			if (Buttonclick(point3, mouseX, mouseY) && leftclick)
+			{
+				angle -= .1f;
+			}
+
+			SDL_Rect point4;
+			point4.w = 10;
+			point4.h = 10;
+			point4.x = 155;
+			point4.y = 50;
+			if (Buttonclick(point4, mouseX, mouseY) && leftclick)
+			{
+				TX -= .1f;
+			}
+
+			SDL_Rect point5;
+			point5.w = 10;
+			point5.h = 10;
+			point5.x = 155;
+			point5.y = 70;
+			if (Buttonclick(point5, mouseX, mouseY) && leftclick)
+			{
+				TY -= .1f;
+			}
+
+			SDL_Rect point6;
+			point6.w = 10;
+			point6.h = 10;
+			point6.x = 95;
+			point6.y = 50;
+			if (Buttonclick(point6, mouseX, mouseY) && leftclick)
+			{
+				SX += .1f;
+			}
+
+			SDL_Rect point7;
+			point7.w = 10;
+			point7.h = 10;
+			point7.x = 95;
+			point7.y = 70;
+			if (Buttonclick(point7, mouseX, mouseY) && leftclick)
+			{
+				SY += .1f;
+			}
+
+			SDL_Rect point8;
+			point8.w = 10;
+			point8.h = 10;
+			point8.x = 175;
+			point8.y = 90;
+			if (Buttonclick(point8, mouseX, mouseY) && leftclick)
+			{
+				angle += .1f;
+			}
+
+			SDL_Rect point9;
+			point9.w = 10;
+			point9.h = 10;
+			point9.x = 245;
+			point9.y = 50;
+			if (Buttonclick(point9, mouseX, mouseY) && leftclick)
+			{
+				TX += .1f;
+			}
+
+			SDL_Rect point10;
+			point10.w = 10;
+			point10.h = 10;
+			point10.x = 245;
+			point10.y = 70;
+			if (Buttonclick(point10, mouseX, mouseY) && leftclick)
+			{
+				TY += .1f;
+			}
+
+			SDL_Rect apply;
+			apply.w = 50;
+			apply.h = 50;
+			apply.x = 245;
+			apply.y = 200;
+			if (Buttonclick(apply, mouseX, mouseY) && leftclick)
+			{
+				std::list <Vector2> Vectoresmodificados = MultiplyVectores(Vectores, T2);
+				Vectores.clear();
+
+				for (std::list<Vector2>::iterator it = Vectoresmodificados.begin(); it != Vectoresmodificados.end(); ++it)
+				{
+					Vectores.push_back(*it);
+				}
+				Vectoresmodificados.clear();
+			}
+
+			SDL_Rect background;
+			background.w = 300;
+			background.h = 300;
+			background.x = 0;
+			background.y = 0;
+			if (Buttonclick(background, mouseX, mouseY) && leftclick)
+			{
+				Menu = true;
+			}
+			else
+			{
+				Menu = false;
+			}
+
+			DrawText(SX, SY, angle, TX, TY, T2);
+			SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
+			SDL_RenderFillRect(gRenderer, &point1);
+			SDL_RenderFillRect(gRenderer, &point2);
+			SDL_RenderFillRect(gRenderer, &point3);
+			SDL_RenderFillRect(gRenderer, &point4);
+			SDL_RenderFillRect(gRenderer, &point5);
+			SDL_SetRenderDrawColor(gRenderer, 0x00, 0x10, 0xFF, 0xFF);
+			SDL_RenderFillRect(gRenderer, &point6);
+			SDL_RenderFillRect(gRenderer, &point7);
+			SDL_RenderFillRect(gRenderer, &point8);
+			SDL_RenderFillRect(gRenderer, &point9);
+			SDL_RenderFillRect(gRenderer, &point10);
+			SDL_SetRenderDrawColor(gRenderer, 0xFF, 0xFF, 0xFF, 0xFF);
+			SDL_RenderFillRect(gRenderer, &apply);
+
+			//Vector2 *V1 = new Vector2(2, 1);
+			//DrawVector(V1);
+
+			//Vector2 V2(2, 1);
+
+			//Matrix Transform(3, 3);
+			//Transform(0, 0) = 2;
+			//Transform(1, 1) = 2;
+
+			//DrawVector(Transform * *V1);
+
+			//Matrix M2(1, 2);
+			//M2(0, 0) = 1;
+			//M2(0, 1) = 1;
+
+			////DrawMatrix(M2);
+
+			//Matrix M1(2, 2);
+			//M1(0, 0) = 4; 
+			//M1(1, 1) = 1;
+			////M1.Print();
+
+			//Matrix M5(0, 0);
+			//M5 = (M1 * M2);
+			////DrawMatrix(M5);
+			////M5.Print();
+
+			//M1.transpose();
+
+			//
+			//*5 1 1
+			//
+			//4 1 0
+			//0 1 0
+			//0 0 0*/
+
+			//MatrizEscalamiento MS(1.5, 2);
+			////MS.Print();
+			//MatrizRotacion MR(90);
+			////MR.Print();
+			//MatrizTranslacion MT(1.5, 1.5);
+			////MT.Print();
+
+			
+			
+			SDL_RenderPresent(gRenderer);
 		}
 
 	}
