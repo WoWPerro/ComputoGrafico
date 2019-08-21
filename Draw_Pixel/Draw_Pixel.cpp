@@ -320,6 +320,89 @@ bool Buttonclick(SDL_Rect point, int x, int y)
 	return false;
 }
 
+void DrawLine(float x1, float y1, float x2, float y2)
+{
+	x1 = ((50 * x1) + (SCREEN_WIDTH / 2));
+	x2 = ((50 * x2) + (SCREEN_WIDTH / 2));
+	y1 = (-(50 * y1) + (SCREEN_HEIGHT / 2));
+	y2 = (-(50 * y2) + (SCREEN_HEIGHT / 2));
+
+	float y = y1;
+	float x = x1;
+	float m = 0;
+	float c = 0;
+	m = ((y2 - y1) / (x2 - x1));
+	c = y1 - (m * x1);
+	if (m < 1)
+	{
+		//std::cout << "----------------------" << std::endl;
+		//for (x1; x1<x2;x1++)
+		for (int i = -50; i < 50; i++)
+		{
+			x = (y - c)/m;
+			SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0xEC, 0xFF);
+			SDL_RenderDrawPoint(gRenderer, x, y);
+			//std::cout << x << ":" << y << std::endl;
+			y--;
+			/*if (y > y2)
+			{
+				return;
+			}*/
+		}
+		//std::cout << "----------------------" << std::endl;
+	}
+	else if (m > 1)
+	{
+		for (int i = -50; i < 50; i++)
+		{
+			y = m * x + c;
+			SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0xEC, 0xFF);
+			SDL_RenderDrawPoint(gRenderer, x, y);
+			x--;
+			/*if (x > x2)
+			{
+				return;
+			}*/
+		}
+	}
+}
+
+void DrawLine2(float x1, float y1, float x2, float y2)
+{
+	x1 = ((50 * x1) + (SCREEN_WIDTH / 2));
+	x2 = ((50 * x2) + (SCREEN_WIDTH / 2));
+	y1 = (-(50 * y1) + (SCREEN_HEIGHT / 2));
+	y2 = (-(50 * y2) + (SCREEN_HEIGHT / 2));
+	float dx = 0;
+	float dy = 0;
+	float denominador = 1;
+	float xincr = 0;
+	float yincr = 0;
+	float x = 0;
+	float y = 0;
+	dx = x2 - x1;
+	dy = y2 - y1;
+	if (abs(dy) < abs(dx))
+	{
+		denominador = abs(dx);
+	}
+	else if (abs(dy) >= abs(dx))
+	{
+		denominador = abs(dy);
+	}
+	xincr = dx / denominador;
+	yincr = dy / denominador;
+	x = x1;
+	y = y1;
+	for (int i = 0; i <= denominador; i++)
+	{
+		SDL_SetRenderDrawColor(gRenderer, 0xFF, 0x00, 0xEC, 0xFF);
+		SDL_RenderDrawPoint(gRenderer, x, y);
+		x = x + xincr;
+		y = y + yincr;
+	}
+}
+
 int main(int argc, char* args[])
 {
 	int mouseX = 0;
@@ -613,6 +696,20 @@ int main(int argc, char* args[])
 
 			
 			
+
+
+
+
+
+
+
+			//DrawLine(1, 1, 3, 2);
+			//DrawLine(0, 0, 1, 2);
+			//DrawLine(0, -1, -2, -3);
+
+			DrawLine2(1, 1, 2, 2);
+			DrawLine2(-1, -2, 0, 0);
+
 			SDL_RenderPresent(gRenderer);
 		}
 

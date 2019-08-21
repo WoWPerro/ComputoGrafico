@@ -6,5 +6,8 @@ c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\dr
 c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(268): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(301): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(302): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(379): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(344): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(360): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(400): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(462): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   Draw_Pixel.vcxproj -> C:\Users\Carlo\source\repos\5_Trimestre\ComputoGráfico\Draw_Pixel\Debug\Draw_Pixel.exe

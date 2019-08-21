@@ -154,6 +154,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Line.h" />
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="MatrizEscalamiento.h" />
     <ClInclude Include="MatrizRotacion.h" />
@@ -164,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Draw_Pixel.cpp" />
+    <ClCompile Include="Line.cpp" />
     <ClCompile Include="Matrix.cpp" />
     <ClCompile Include="MatrizEscalamiento.cpp" />
     <ClCompile Include="MatrizRotacion.cpp" />
