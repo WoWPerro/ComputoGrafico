@@ -1,13 +1,54 @@
 ﻿  Draw_Pixel.cpp
 c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\matrix.h(43): warning C4521: 'Matrix': multiple copy constructors specified
-c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(253): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(254): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(267): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(255): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(268): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(301): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(269): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(302): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
-c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(344): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(360): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(400): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(462): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(303): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(369): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(370): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(377): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(379): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(380): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(385): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(386): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(392): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(394): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(395): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(430): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(431): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(432): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(530): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(531): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(532): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(533): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(534): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(535): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(536): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(537): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(565): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(570): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(593): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(602): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(649): warning C4244: 'initializing': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(653): warning C4305: '+=': truncation from 'double' to 'float'
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(668): warning C4244: 'argument': conversion from 'float' to 'long', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(669): warning C4244: 'argument': conversion from 'float' to 'long', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(670): warning C4244: 'argument': conversion from 'float' to 'long', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(670): warning C4244: 'initializing': conversion from 'long' to 'float', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(676): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(705): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(706): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(707): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(708): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(709): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(714): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(715): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(716): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(718): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(719): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(720): warning C4305: 'argument': truncation from 'double' to 'float'
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(824): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\carlo\source\repos\5_trimestre\computográfico\draw_pixel\draw_pixel\draw_pixel.cpp(629): warning C4715: 'fact': not all control paths return a value
   Draw_Pixel.vcxproj -> C:\Users\Carlo\source\repos\5_Trimestre\ComputoGráfico\Draw_Pixel\Debug\Draw_Pixel.exe
